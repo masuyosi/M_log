@@ -1,15 +1,42 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>MLog</title>
+    <title>M-Log</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto|Roboto+Slab:300" rel="stylesheet">
+
   </head>
 
   <body>
-    <%= yield %>
+    <div class="header">
+      <div class="banner-wrapper">
+        <div class="logo-img"><%= image_tag 'logo_img.png' %></div>
+        <div class="banner">
+          <div class="top">
+            <div class="logo"><%= link_to "M-log", root_path, class: "header-title" %></div>
+            <div class="right-top">
+              <%= link_to "post", new_post_path, class: "header-right-text" %>
+            </div>
+          </div>
+          <div class="nav">
+            <ul class="menu">
+              <li><a href=""><%= link_to "Home", root_path %></a></li>
+              <li><a href="">Docs</a></li>
+              <li><a href="">About</a></li>
+              <li><a href="">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="contents">
+        <%= yield %>
+      </div>
+      <footer>
+      </footer>
+    </div>
   </body>
 </html>
